@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-    <my-header/>
-    <my-main/>
+    <Header></Header>
+    <div class="main">
+      <router-view name="slidebar"></router-view>
+      <router-view name="main"></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import header from './components/header'
-import main from './components/main'
+  import Header from './components/Header'
+  import PostList from './components/PostList'
 export default {
-  name: 'app',
-  components: {
-    'my-header': header,
-    'my-main': main
+  name: 'App',
+  components:{
+    Header,PostList
   }
 }
 </script>
 
 <style>
-* { padding: 0; margin: 0; box-sizing: border-box; }
-body { background: #e1e1e1; }
-.clearfix::after,  .clearfix::before { content: ''; display: block; clear: both; }
+.main{ width: 80%;margin: 0 auto; }
 </style>
